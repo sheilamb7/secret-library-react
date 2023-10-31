@@ -1,7 +1,7 @@
 .prompt_list_container {
 
     ul {
-        list-style: url("../../web_img/SL_list_icon12.png");
+        list-style: url("https://i33.servimg.com/u/f33/20/31/42/73/sl_lis10.png");
 
         li {
             padding: .5em 0;
@@ -9,6 +9,7 @@
             &:hover {
                 background-color: rgba($color2, 0.1);
                 color: $color5;
+                cursor: pointer;
             }
         }
     }
