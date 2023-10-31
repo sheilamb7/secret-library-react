@@ -13,7 +13,7 @@ export default class PromptsList extends Component {
     }
 
     getPromptsFromId(){
-        axios.get(`http://127.0.0.1:8000/prompts_list/${this.state.challengeId}`)
+        axios.get(`https://secret-library-api.onrender.com/prompts_list/${this.state.challengeId}`)
         .then(response => {
            console.log("prompt response", response);
            this.setState({

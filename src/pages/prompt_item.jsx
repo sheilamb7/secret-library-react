@@ -44,7 +44,7 @@ export default class PromptItem extends Component {
 
         axios({
             method: "put", 
-            url: `http://127.0.0.1:8000/prompts/${this.state.prompts_id}`,
+            url: `https://secret-library-api.onrender.com/prompts/${this.state.prompts_id}`,
             data: {
                 "prompts_id": this.state.prompts_id,
                 "prompts_challenge_id": this.state.prompts_challenge_id,
