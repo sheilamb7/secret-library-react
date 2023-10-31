@@ -43,8 +43,6 @@ export default class ChallengesList extends Component {
             {/* <div><a href={this.state.data.}>{this.state.data.challenges_name}</a></div>
             <p></p> */}
             {this.challenges()}
-            <p className='challenge_title'>Titulo</p>
-            <p>Prueba CSS</p>
           </div>
        );
    }

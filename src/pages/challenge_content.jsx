@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useParams, useLocation } from 'react-router-dom';
 
-import Header from '../header/header';
+import Header from '../header-footer/header';
+import Footer from '../header-footer/footer';
 import PromptsList from './prompts_list';
 
 const ChallengeContent = (props) => {
@@ -25,6 +26,7 @@ const ChallengeContent = (props) => {
                <h2>{challenges_name}</h2>
                <PromptsList challenge_id={challenges_id}/>
             </div>
+            <Footer />
             
          </div>
        );

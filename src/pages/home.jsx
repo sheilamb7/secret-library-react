@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../header/header";
+import Header from "../header-footer/header";
 import ChallengesList from "./challenge_list";
 
 export default function() {
