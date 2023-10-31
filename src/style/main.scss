@@ -1,0 +1,31 @@
+
+body {
+    margin: 0px;
+    font-weight: normal;
+    font-family: $alice;
+    background-image: url('../web_img/SL_fondo.jpg');
+    background-attachment: fixed;
+  }
+
+  #root { 
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  
+  .main_container {
+    min-height: 100vh;
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: start;
+    border-left: 4px solid $color3;
+    border-right: 4px solid $color3;
+    background-color: rgba($color1, 0.5);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: $marck;
+  }
