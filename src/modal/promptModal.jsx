@@ -8,7 +8,6 @@ export default class PromptModal extends Component {
        super(props);
 
        this.state = {
-        isOpen: this.props.modalIsOpen,
         completed_book: this.props.completed_book,
         prompt_content: this.props.prompt_content
        }

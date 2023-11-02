@@ -48,7 +48,7 @@ export default class PromptItem extends Component {
         })
     }
     addBook(event) {
-        const book = prompt("Insert a book for: " + this.state.prompts_content, this.state.prompts_completed_book)
+        //const book = prompt("Insert a book for: " + this.state.prompts_content, this.state.prompts_completed_book)
         
         this.setState({
             promptModalisOpen: true
@@ -58,16 +58,16 @@ export default class PromptItem extends Component {
             method: "put", 
             url: `https://secret-library-api.onrender.com/prompts/${this.state.prompts_id}`,
             data: {
-                // "prompts_id": this.state.prompts_id,
-                // "prompts_challenge_id": this.state.prompts_challenge_id,
-                // "prompts_content": this.state.prompts_content,
-                // "prompts_completed": this.state.prompts_completed ,
+                "prompts_id": this.state.prompts_id,
+                "prompts_challenge_id": this.state.prompts_challenge_id,
+                "prompts_content": this.state.prompts_content,
+                "prompts_completed": this.state.prompts_completed ,
                 "prompts_completed_book": book}
                 })
         .then (response => {
             //console.log(response)
             this.setState({
-                prompts_completed_book: book
+                prompts_completed_book: completed_book
             })
         }) 
         .catch(error => {
