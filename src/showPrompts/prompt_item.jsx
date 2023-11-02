@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import PromptModal from '../modal/promptModal';
+import PromptModalSimple from '../modal/promptModalSimple';
 
 export default class PromptItem extends Component {
     constructor(props) {
