@@ -18,7 +18,7 @@ export default class PromptModal extends Component {
             left: "50%"
         },
         overlay: {
-            backgroundColor: `rgba(${color6}, 0.75)`
+            backgroundColor: 'rgba(18, 24, 38, 0.45)'
         }
        }
     }
