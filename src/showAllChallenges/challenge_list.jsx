@@ -7,7 +7,6 @@ export default class ChallengesList extends Component {
        super();
 
        this.state = {
-            title: 'hello',
             data: []
        }
 
@@ -40,6 +39,8 @@ export default class ChallengesList extends Component {
    render(){
        return (
           <div className='challenges_list_container'>
+            <div className='info'>Welcome to the Secret Library! <br/>These are the challenges available right now:</div>
+
             {/* <div><a href={this.state.data.}>{this.state.data.challenges_name}</a></div>
             <p></p> */}
             {this.challenges()}

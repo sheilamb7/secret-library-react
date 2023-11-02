@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../header-footer/header";
-import ChallengesList from "./challenge_list";
+import ChallengesList from "../showAllChallenges/challenge_list";
 
 export default function() {
   return (

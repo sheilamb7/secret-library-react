@@ -1,12 +1,11 @@
 import React from 'react';
-import axios from 'axios';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import Header from '../header-footer/header';
 import Footer from '../header-footer/footer';
 import PromptsList from './prompts_list';
 
-const ChallengeContent = (props) => {
+const ChallengeContent = () => {
 
    const location = useLocation();
    const { challenges_id, challenges_name } = location.state; 
@@ -24,6 +23,7 @@ const ChallengeContent = (props) => {
             <Header />
             <div className='challenges_content'>
                <h2>{challenges_name}</h2>
+               <div className='info'>These are the prompts you need to complete to finish this challenge. <b>Good luck!</b></div>
                <PromptsList challenge_id={challenges_id}/>
             </div>
             <Footer />

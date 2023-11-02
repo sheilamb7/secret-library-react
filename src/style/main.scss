@@ -1,32 +1,40 @@
 
 body {
-    margin: 0px;
-    font-weight: normal;
-    font-family: $alice;
-    background-image: url('https://i33.servimg.com/u/f33/20/31/42/73/sl_fon10.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-  }
+  margin: 0px;
+  font-weight: normal;
+  font-family: $alice;
+  color: $color4;
+  background-image: url('https://i33.servimg.com/u/f33/20/31/42/73/sl_fon10.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
 
-  #root { 
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-  
-  .main_container {
-    min-height: 100vh;
-    min-width: 400px;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-content: start;
-    border-left: 4px solid $color3;
-    border-right: 4px solid $color3;
-    background-color: rgba($color1, 0.5);
-  }
+#root { 
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
 
-  h1, h2, h3, h4 {
-    font-family: $marck;
-  }
+.main_container {
+  min-height: 100vh;
+  min-width: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: start;
+  border-left: 4px solid $color3;
+  border-right: 4px solid $color3;
+  background-color: rgba($color1, 0.5);
+}
+
+h1, h2, h3, h4 {
+  font-family: $marck;
+}
+
+.info {
+  color: $color3;
+  font-size: 0.8em;
+  padding: .5em 2em;
+  text-align: center;
+}

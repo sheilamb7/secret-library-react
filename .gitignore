@@ -25,3 +25,4 @@ dist-ssr
 
 # Others
 ignored_files
+./showPrompts/prompt_item copy.jsx

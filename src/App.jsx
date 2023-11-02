@@ -1,6 +1,3 @@
-import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.scss'
 import {
   createBrowserRouter,
@@ -9,7 +6,7 @@ import {
 
 import Home from './pages/home';
 import NoMatch from './pages/no-match';
-import ChallengeContent from './pages/challenge_content';
+import ChallengeContent from './showPrompts/challenge_content';
 
 function App() {
   const router = createBrowserRouter([
