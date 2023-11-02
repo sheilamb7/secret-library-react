@@ -49,6 +49,10 @@ export default class PromptModal extends Component {
         })
 
     }
+
+    addBookPrueba(event){
+
+    }
     addBook(event){
         event.preventDefault();
 
@@ -79,8 +83,8 @@ export default class PromptModal extends Component {
           style= {this.customStyles}
           isOpen={this.props.modalIsOpen}
           onRequestClose={() => {this.props.handleModalClose()}}>
-            <div>{this.state.prompt_content} : {this.state.completed_book}</div>
-            <form className="form_add_book" onSubmit={this.addBook}>
+            <div>{this.state.prompts_content} : {this.state.completed_book}</div>
+            {/* <form className="form_add_book" onSubmit={this.addBook}>
                 <input
                 type="text"
                 name="book"
@@ -92,7 +96,7 @@ export default class PromptModal extends Component {
                 <div>
                     <button className="btn_add_book">Save</button>
                 </div>
-            </form>
+            </form> */}
           </ReactModal>
        );
    }
