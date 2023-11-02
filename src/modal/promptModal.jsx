@@ -8,7 +8,9 @@ export default class PromptModal extends Component {
        super(props);
 
        this.state = {
-        isOpen: this.props.modalIsOpen
+        isOpen: this.props.modalIsOpen,
+        completed_book: this.props.completed_book,
+        prompt_content: this.props.prompt_content
        }
 
        this.customStyles = {
@@ -28,6 +30,7 @@ export default class PromptModal extends Component {
           onRequestClose={() => {this.props.handleModalClose()}}
           isOpen={this.props.modalIsOpen}>
             <div>Aquí va el form: nsert book for x prompt</div>
+            <div>{this.state.prompt_content} : {this.state.completed_book}</div>
           </ReactModal>
        );
    }

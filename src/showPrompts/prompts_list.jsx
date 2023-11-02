@@ -15,7 +15,6 @@ export default class PromptsList extends Component {
     getPromptsFromId(){
         axios.get(`https://secret-library-api.onrender.com/prompts_list/${this.state.challengeId}`)
         .then(response => {
-           console.log("prompt response", response);
            this.setState({
               promptList: response.data
            })
