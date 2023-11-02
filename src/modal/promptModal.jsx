@@ -40,6 +40,7 @@ export default class PromptModal extends Component {
        }
        
        this.addBook = this.addBook.bind(this);
+       this.handleInputChange = this.handleInputChange.bind(this);
     }
 
 

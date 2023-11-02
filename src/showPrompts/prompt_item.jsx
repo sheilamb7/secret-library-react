@@ -50,7 +50,7 @@ export default class PromptItem extends Component {
     render () {
         return (
             <li>
-                <PromptModal
+                <PromptModalSimple
                 modalIsOpen={this.state.promptModalisOpen}
                 handleModalClose={this.handleModalClose()} 
                 promptItem={this.props.promptItem}
