@@ -8,6 +8,19 @@ export default class PromptModalSimple extends Component {
     constructor(props){
        super(props);
 
+       const {
+        prompts_id,
+        prompts_challenge_id,
+        prompts_content,
+        prompts_completed,
+        prompts_completed_book
+    } = this.props.promptItem
+
+    this.state = {
+        prompts_content: prompts_content,
+        prompts_completed_book: prompts_completed_book
+    }
+
        this.customStyles = {
         content: {
             top: '50%',
