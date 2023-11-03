@@ -29,21 +29,6 @@ export default class PromptItem extends Component {
     }
 
 
-    // componentDidMount() {
-    //     if (Object.keys(this.props.promptItem).length > 0) {
-    //         const {
-    //             prompts_id,
-    //             prompts_challenge_id,
-    //             prompts_content,
-    //             prompts_completed,
-    //             prompts_completed_book
-    //         } = this.props.promptItem
-        
-           
-    //     }
-
-    // }
-
     handleModalClose() {
         this.setState({
             promptModalisOpen: false
@@ -83,14 +68,14 @@ export default class PromptItem extends Component {
     render () {
         return (
             <>
-            <PromptModal
+            {/* <PromptModal
             modalIsOpen={this.state.promptModalisOpen}
             handleModalClose={this.handleModalClose()} 
             completed_book={this.state.prompts_completed_book}
             prompt_content={this.state.prompts_content}
             // inputBook={this.addBook}
-            />
-            <div className='prompt_container' onClick={() => {this.handleOpenModal()}}>
+            /> */}
+            <div className='prompt_container' onClick={() => {console.log("prompt click")}}>
                 {this.state.prompts_completed_book ? (
                 <div className='prompt_name prompt_complete'>
                     {this.state.prompts_content}
