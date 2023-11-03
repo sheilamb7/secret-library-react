@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import PromptModal from '../modal/promptModal';
+import PromptModalSimple from '../modal/promptModalSimple';
 
 export default class PromptItem extends Component {
     constructor(props) {
@@ -23,7 +24,6 @@ export default class PromptItem extends Component {
             promptModalisOpen: false
         }
         
-        this.addBook = this.addBook.bind(this);
     }
 
 
@@ -47,13 +47,9 @@ export default class PromptItem extends Component {
             promptModalisOpen: false
         })
     }
-    addBook(event) {
-        //const book = prompt("Insert a book for: " + this.state.prompts_content, this.state.prompts_completed_book)
-        
-        this.setState({
-            promptModalisOpen: true
-        })
 
+    addBook(inputedBook){
+        
         axios({
             method: "put", 
             url: `https://secret-library-api.onrender.com/prompts/${this.state.prompts_id}`,
@@ -62,30 +58,30 @@ export default class PromptItem extends Component {
                 "prompts_challenge_id": this.state.prompts_challenge_id,
                 "prompts_content": this.state.prompts_content,
                 "prompts_completed": this.state.prompts_completed ,
-                "prompts_completed_book": book}
+                "prompts_completed_book": inputedBook}
                 })
         .then (response => {
             //console.log(response)
             this.setState({
-                prompts_completed_book: completed_book
+                prompts_completed_book: inputedBook
             })
         }) 
         .catch(error => {
             console.log("Error on updating this prompt", error)
         })
-        
     }
     
     render () {
         return (
             <li>
-                <PromptModal
+                <PromptModalSimple
                 modalIsOpen={this.state.promptModalisOpen}
-                handleModalClose={this.handleModalClose} 
-                completed_book= {this.state.prompts_completed_book}
+                handleModalClose={this.handleModalClose()} 
+                completed_book={this.state.prompts_completed_book}
                 prompt_content={this.state.prompts_content}
+                inputBook={this.addBook}
                 />
-            <div className='prompt_container' onClick={() => this.addBook()}>
+            <div className='prompt_container' onClick={() => this.setState({promptModalisOpen : true})}>
                 {this.state.prompts_completed_book ? (
                 <div className='prompt_name prompt_complete'>
                     {this.state.prompts_content}
