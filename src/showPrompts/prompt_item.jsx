@@ -21,28 +21,14 @@ export default class PromptItem extends Component {
             prompts_content: prompts_content,
             prompts_completed: prompts_completed,
             prompts_completed_book: prompts_completed_book,
-            promptModalisOpen: false
+
         }
-        
-        this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.handleModalClose = this.handleModalClose.bind(this);
     }
 
+    addBookForm() {
+        const book = prompt(`Input a book for ${this.state.prompts_content}:`, this.state.prompts_completed_book)
 
-    handleModalClose() {
-        this.setState({
-            promptModalisOpen: false
-        }, () => 
-        console.log('Close:', this.state.promptModalisOpen)
-        )
-    }
-
-    handleOpenModal() {
-        this.setState({
-            promptModalisOpen: true
-        }, () => 
-        console.log('Open:', this.state.promptModalisOpen)
-        )
+        console.log(book);
     }
 
     addBook(inputedBook){
@@ -71,14 +57,7 @@ export default class PromptItem extends Component {
     render () {
         return (
             <>
-            <PromptModal
-            modalIsOpen={this.state.promptModalisOpen}
-            handleModalClose={this.handleModalClose()} 
-            // completed_book={this.state.prompts_completed_book}
-            // prompt_content={this.state.prompts_content}
-            // inputBook={this.addBook}
-            />
-            <div className='prompt_container' onClick={() => {this.handleOpenModal()}}>
+            <div className='prompt_container' onClick={() => {this.addBookForm()}}>
                 {this.state.prompts_completed_book ? (
                 <div className='prompt_name prompt_complete'>
                     {this.state.prompts_content}
