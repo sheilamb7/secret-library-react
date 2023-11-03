@@ -48,6 +48,12 @@ export default class PromptItem extends Component {
         })
     }
 
+    handleOpenModal() {
+        this.setState({
+            promptModalisOpen: true
+        })
+    }
+
     addBook(inputedBook){
         
         axios({
@@ -81,7 +87,7 @@ export default class PromptItem extends Component {
                 prompt_content={this.state.prompts_content}
                 // inputBook={this.addBook}
                 />
-            <div className='prompt_container' onClick={() => this.setState({promptModalisOpen: true})}>
+            <div className='prompt_container' onClick={() => this.handleOpenModal}>
                 {this.state.prompts_completed_book ? (
                 <div className='prompt_name prompt_complete'>
                     {this.state.prompts_content}
