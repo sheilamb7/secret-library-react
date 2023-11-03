@@ -39,8 +39,9 @@ export default class PromptItem extends Component {
         console.log('handnel open modal')
         this.setState({
             promptModalisOpen: true
-        })
+        }, () => 
         console.log(this.state.promptModalisOpen)
+        )
     }
 
     addBook(inputedBook){
