@@ -34,7 +34,7 @@ export default class PromptModal extends Component {
           onRequestClose={() => {this.props.handleModalClose()}}>
             
             <div>Aquí va el form: Insert book for x prompt</div>
-            <div>{this.state.prompt_content} : {this.state.completed_book}</div>
+            {/* <div>{this.state.prompt_content} : {this.state.completed_book}</div> */}
           </ReactModal>
        );
    }
