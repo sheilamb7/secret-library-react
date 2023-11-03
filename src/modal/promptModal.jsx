@@ -22,7 +22,7 @@ export default class PromptModal extends Component {
         }
        }
     }
-   render(){
+   render(){ 
        return (
           <ReactModal
           style= {this.customStyles}
