@@ -50,8 +50,7 @@ export default class PromptItem extends Component {
         })
     }
 
-    handleOpenModal(e) {
-        e.preventDefault;
+    handleOpenModal() {
         console.log('handnel open modal')
         this.setState({
             promptModalisOpen: true
