@@ -51,9 +51,6 @@ export default class PromptModal extends Component {
 
     }
 
-    addBookPrueba(event){
-
-    }
     addBook(event){
         event.preventDefault();
 

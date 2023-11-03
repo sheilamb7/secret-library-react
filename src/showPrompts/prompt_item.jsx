@@ -47,6 +47,29 @@ export default class PromptItem extends Component {
             promptModalisOpen: false
         })
     }
+
+    addBook(inputedBook){
+        
+        axios({
+            method: "put", 
+            url: `https://secret-library-api.onrender.com/prompts/${this.state.prompts_id}`,
+            data: {
+                "prompts_id": this.state.prompts_id,
+                "prompts_challenge_id": this.state.prompts_challenge_id,
+                "prompts_content": this.state.prompts_content,
+                "prompts_completed": this.state.prompts_completed ,
+                "prompts_completed_book": inputedBook}
+                })
+        .then (response => {
+            //console.log(response)
+            this.setState({
+                prompts_completed_book: inputedBook
+            })
+        }) 
+        .catch(error => {
+            console.log("Error on updating this prompt", error)
+        })
+    }
     
     render () {
         return (
@@ -54,7 +77,9 @@ export default class PromptItem extends Component {
                 <PromptModalSimple
                 modalIsOpen={this.state.promptModalisOpen}
                 handleModalClose={this.handleModalClose()} 
-                promptItem={this.props.promptItem}
+                completed_book={this.state.prompts_completed_book}
+                prompt_content={this.state.prompts_content}
+                inputBook={this.addBook}
                 />
             <div className='prompt_container' onClick={() => this.setState({promptModalisOpen : true})}>
                 {this.state.prompts_completed_book ? (
