@@ -37,9 +37,7 @@ export default class PromptsList extends Component {
    render(){
        return (
          <div className='prompt_list_container'>
-            <ul>
             {this.prompts()}
-            </ul>
          </div>
        );
    }

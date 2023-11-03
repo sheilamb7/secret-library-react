@@ -90,7 +90,6 @@ export default class PromptItem extends Component {
             prompt_content={this.state.prompts_content}
             // inputBook={this.addBook}
             />
-            <li>
             <div className='prompt_container' onClick={() => {this.handleOpenModal()}}>
                 {this.state.prompts_completed_book ? (
                 <div className='prompt_name prompt_complete'>
@@ -103,7 +102,7 @@ export default class PromptItem extends Component {
                 )}
                     
                 <div className='prompt_book'>{this.state.prompts_completed_book}</div>
-            </div></li>
+            </div>
             </>
         );
     }
