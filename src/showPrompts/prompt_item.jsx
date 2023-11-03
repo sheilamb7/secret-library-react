@@ -74,14 +74,14 @@ export default class PromptItem extends Component {
     render () {
         return (
             <li>
-                <PromptModalSimple
+                <PromptModal
                 modalIsOpen={this.state.promptModalisOpen}
                 handleModalClose={this.handleModalClose()} 
                 completed_book={this.state.prompts_completed_book}
                 prompt_content={this.state.prompts_content}
-                inputBook={this.addBook}
+                // inputBook={this.addBook}
                 />
-            <div className='prompt_container' onClick={() => this.setState({promptModalisOpen : true})}>
+            <div className='prompt_container' onClick={() => console.log('he hecho click en el prompt')}>
                 {this.state.prompts_completed_book ? (
                 <div className='prompt_name prompt_complete'>
                     {this.state.prompts_content}
