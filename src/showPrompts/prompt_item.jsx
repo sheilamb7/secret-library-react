@@ -50,7 +50,8 @@ export default class PromptItem extends Component {
         })
     }
 
-    handleOpenModal() {
+    handleOpenModal(e) {
+        e.preventDefault();
         console.log('handnel open modal')
         this.setState({
             promptModalisOpen: true
@@ -90,7 +91,7 @@ export default class PromptItem extends Component {
                 prompt_content={this.state.prompts_content}
                 // inputBook={this.addBook}
                 />
-            <div className='prompt_container' onClick={() => {this.handleOpenModal()}}>
+            <div className='prompt_container' onClick={(e) => {this.handleOpenModal()}}>
                 {this.state.prompts_completed_book ? (
                 <div className='prompt_name prompt_complete'>
                     {this.state.prompts_content}
