@@ -39,3 +39,27 @@ h1, h2, h3, h4 {
   align-self: center;
   max-width: 80%;
 }
+
+.content-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+
+  .loader-image {
+    width: 400px;
+    height: 232px;
+    background-blend-mode: multiply;
+    
+    background-size: cover;
+    background-color: #EFC6CB;
+  }
+
+  .loading-image {
+    background-image: url('https://media.giphy.com/media/l1J9MErMKGsxPkGc0/giphy.gif');
+  }
+  .no-match-image {
+    background-image: url("https://media.giphy.com/media/l0HlAgJTVaAPHEGdy/giphy.gif");
+  }
+}

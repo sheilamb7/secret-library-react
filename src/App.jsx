@@ -17,7 +17,8 @@ function App() {
     },
     {
       path: "/challenges/:challenges_id",
-      element: <ChallengeContent />
+      element: <ChallengeContent />,
+      errorElement: <NoMatch />
     }
     //<Route path="/weather/:id" render={ ({match}) => <Home id={match.params.id}/> } /> //This is the rout
   ]);

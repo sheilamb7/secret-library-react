@@ -7,18 +7,21 @@ export default class ChallengesList extends Component {
        super();
 
        this.state = {
-            data: []
+            data: [],
+            isLoading: true
        }
 
        this.getChallenges = this.getChallenges.bind(this);
     }
 
     getChallenges(){
-      axios.get('https://secret-library-api.onrender.com/challenges')
+      // axios.get('https://secret-library-api.onrender.com/challenges')
+      axios.get('http://127.0.0.1:8000/challenges')
       .then(response => {
          //console.log(response);
          this.setState({
-            data: response.data
+            data: response.data,
+            isLoading: false
         })
       })
       .catch(error => {
@@ -39,10 +42,17 @@ export default class ChallengesList extends Component {
    render(){
        return (
           <div className='challenges_list_container'>
+            
             <div className='info'>Welcome to the Secret Library! <br/>These are the challenges available right now:</div>
 
             {/* <div><a href={this.state.data.}>{this.state.data.challenges_name}</a></div>
             <p></p> */}
+            {this.state.isLoading ? 
+               <div className='content-loading'>
+                  <div className='loader-image loading-image'></div>
+                  <div className='info'>Excuse us while the bookworms fetch the challenges: they're slow!</div></div>
+            : null }
+
             {this.challenges()}
           </div>
        );

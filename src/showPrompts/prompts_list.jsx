@@ -8,15 +8,18 @@ export default class PromptsList extends Component {
 
        this.state = {
             challengeId: props.challenge_id, //esto será un prop que vendrá de ChallengeContent
-            promptList: []
+            promptList: [],
+            isLoading: true
        }
     }
 
     getPromptsFromId(){
-        axios.get(`https://secret-library-api.onrender.com/prompts_list/${this.state.challengeId}`)
+      //   axios.get(`https://secret-library-api.onrender.com/prompts_list/${this.state.challengeId}`)
+        axios.get(`http://127.0.0.1:8000/prompts_list/${this.state.challengeId}`)
         .then(response => {
            this.setState({
-              promptList: response.data
+              promptList: response.data,
+              isLoading: false
            })
         }).catch(error => {
            console.log("ERROR on getPromptsFromId: ", error)
@@ -37,6 +40,13 @@ export default class PromptsList extends Component {
    render(){
        return (
          <div className='prompt_list_container'>
+            {this.state.isLoading ? 
+               <div className='content-loading info'>
+                  <div className='loader-image loading-image'></div>
+                  <div>Excuse us while the bookworms fetch the challenges: they're slow!</div></div>
+            : null }
+            
+
             {this.prompts()}
          </div>
        );
