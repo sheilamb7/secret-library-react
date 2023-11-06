@@ -54,7 +54,7 @@ export default class PromptItem extends Component {
         return (
             <>
                 <div className='prompt_container' onClick={this.handlePromptClick}>
-                    {prompts_completed_book ? (
+                    {this.state.bookValue ? (
                         <div className='prompt_name prompt_complete'>
                             {prompts_content}
                         </div>
