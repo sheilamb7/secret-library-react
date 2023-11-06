@@ -15,8 +15,7 @@ export default class ChallengesList extends Component {
     }
 
     getChallenges(){
-      // axios.get('https://secret-library-api.onrender.com/challenges')
-      axios.get('http://127.0.0.1:8000/challenges')
+      axios.get('https://secret-library-api.onrender.com/challenges')
       .then(response => {
          //console.log(response);
          this.setState({
@@ -39,7 +38,7 @@ export default class ChallengesList extends Component {
     componentDidMount(){
       this.getChallenges()
     }
-    
+
    render(){
        return (
           <div className='challenges_list_container'>
