@@ -39,6 +39,7 @@ export default class ChallengesList extends Component {
     componentDidMount(){
       this.getChallenges()
     }
+    
    render(){
        return (
           <div className='challenges_list_container'>
@@ -51,9 +52,11 @@ export default class ChallengesList extends Component {
                <div className='content-loading'>
                   <div className='loader-image loading-image'></div>
                   <div className='info'>Excuse us while the bookworms fetch the challenges: they're slow!</div></div>
-            : null }
+            : 
+            this.challenges()
+            }
 
-            {this.challenges()}
+
           </div>
        );
    }

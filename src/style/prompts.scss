@@ -1,5 +1,5 @@
 .prompt_list_container {
-    margin: 1em 0 1em 1.5em;
+    margin: 1em 0 1em 1em;
     ul {
         list-style: url("https://i33.servimg.com/u/f33/20/31/42/73/sl_lis10.png");
 
@@ -21,11 +21,10 @@
         align-items: flex-start;
         justify-content: flex-start;
 
-        padding: .5em 0 .5em 18px;
+        padding: .5em .8em;
+        border-radius: 10px 0 0 10px;
 
-        background-image: url("https://i33.servimg.com/u/f33/20/31/42/73/sl_lis10.png");
-        background-repeat: no-repeat;
-        background-position: left;
+        
 
         &:hover {
             background-color: rgba($color2, 0.1);
@@ -37,6 +36,10 @@
 
         .prompt_name {
             color: $color4;
+            padding-left: 18px;
+            background-image: url("https://i33.servimg.com/u/f33/20/31/42/73/sl_lis10.png");
+            background-repeat: no-repeat;
+            background-position: left;
         }
 
         .prompt_book {
@@ -47,6 +50,60 @@
 
         .prompt_complete {
             text-decoration: line-through;
+        }
+
+        .book_input {
+            width: 100%;
+
+            form {
+                padding: 1em;
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                gap: 1em;
+
+                input[type=text] {
+                    font-family: $alice;
+                    font-size: 1.2em;
+                    padding: .6em .5em .3em;
+                    color: $color4;
+                    border: 2px solid transparent;
+                    background-color: $color0;
+                    border-radius: 10px;
+                    box-shadow: 3px 3px 7px  $color3;
+
+                    
+
+                    &:focus {
+                        box-shadow: 3px 3px 7px  $color5;
+                        outline: none;
+                    }
+                    
+
+                }
+
+                button {
+                    font-family: $marck;
+                    
+                    font-size: 1.5em;
+                    padding: .3em;
+
+                    color: $color1;
+                    background-color: $color5;
+                    border:none;
+                    border-radius: 10px;
+
+
+                    transition: 0.4s ease-in-out;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $color35;
+                        color: $color6;
+                        box-shadow: 0 0 7px  $color5;
+                    }
+                    
+                }
+            }
         }
     }
 }

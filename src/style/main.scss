@@ -53,7 +53,8 @@ h1, h2, h3, h4 {
     background-blend-mode: multiply;
     
     background-size: cover;
-    background-color: #EFC6CB;
+    background-color: $color0;
+    background-image: none;
   }
 
   .loading-image {

@@ -4,9 +4,10 @@ import axios from 'axios';
 export default class PromptItem extends Component {
     state = {
         showForm: false,
-        bookValue: this.props.promptItem.prompts_completed_book
+        bookValue: this.props.promptItem.prompts_completed_book, 
+        reload: false
     }
-    
+
     handlePromptClick = () => {
         this.setState({ showForm: true })
     }
@@ -21,7 +22,7 @@ export default class PromptItem extends Component {
 
     addBook = event => {
         event.preventDefault();
-        const bookValue = this.state.bookValue
+        const bookValue = this.state.bookValue;
 
         axios({
             method: "patch", 
@@ -35,15 +36,12 @@ export default class PromptItem extends Component {
             }
         })
         .then(response => {
-            console.log(response)
             this.setState({
-                showForm: false, 
-                bookValue: "",
-                prompts_completed_book: bookValue
-            })
-
-            // call a callback function to update the parent component's state with the new book value
-            //this.props.onBookAdd(this.props.promptItem.prompts_id, bookValue);
+                showForm: false
+            });
+            // console.log(response);
+            // console.log(this.state.bookValue)
+            
         }) 
         .catch(error => {
             console.log("Error on updating this prompt", error)
@@ -66,7 +64,9 @@ export default class PromptItem extends Component {
                         </div>
                     )}
                         
-                    <div className='prompt_book'>{prompts_completed_book}</div>
+                    {!this.state.showForm &&
+                    <div className='prompt_book'>{this.state.bookValue}</div>
+                    }       
 
                     {this.state.showForm && (
                         <div className='book_input'>
@@ -74,6 +74,7 @@ export default class PromptItem extends Component {
                                 <input 
                                     type='text'
                                     value={this.state.bookValue}
+                                    maxLength="100"
                                     onChange={this.addBookEvent}
                                 />
                                 <button>Save</button>
