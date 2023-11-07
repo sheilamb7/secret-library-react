@@ -17,12 +17,10 @@ export default class ChallengesList extends Component {
     getChallenges(){
       axios.get('https://secret-library-api.onrender.com/challenges')
       .then(response => {
-         setTimeout(() => {
             this.setState({
                data: response.data,
                isLoading: false
            });
-         }, 2000)
          //console.log(response);   
       })
       .catch(error => {

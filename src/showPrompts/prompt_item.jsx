@@ -54,7 +54,7 @@ export default class PromptItem extends Component {
         return (
             <>
                 <div className='prompt_container' onClick={this.handlePromptClick}>
-                    {this.state.bookValue ? (
+                    {this.state.bookValue  && !this.state.showForm ? (
                         <div className='prompt_name prompt_complete'>
                             {prompts_content}
                         </div>
@@ -64,11 +64,8 @@ export default class PromptItem extends Component {
                         </div>
                     )}
                         
-                    {!this.state.showForm &&
-                    <div className='prompt_book'>{this.state.bookValue}</div>
-                    }       
-
-                    {this.state.showForm && (
+                    
+                    {this.state.showForm ? (
                         <div className='book_input'>
                             <form onSubmit={this.addBook} >
                                 <input 
@@ -80,6 +77,8 @@ export default class PromptItem extends Component {
                                 <button>Save</button>
                             </form>
                         </div>
+                    ) : (
+                        <div className='prompt_book'>{this.state.bookValue}</div>
                     )}
                 </div>
             </>
