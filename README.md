@@ -2,7 +2,7 @@
 Secret Library React is a React application to show the contents of Secret Library API. 
 It's created using Vite.
 
-##Functionality
+## Functionality
 It gets the challenges information and shows it on the homepage. 
 
 When clicking one of the challenges it goes to another page and shows all the prompts for that challenge.
