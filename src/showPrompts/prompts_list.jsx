@@ -39,11 +39,11 @@ export default class PromptsList extends Component {
    render(){
        return (
          <div className='prompt_list_container'>
-            {this.state.isLoading ? 
+            {/* {this.state.isLoading ? 
                <div className='content-loading info'>
                   <div className='loader-image loading-image'></div>
                   <div>Excuse us while the bookworms fetch the challenges: they're slow!</div></div>
-            : null }
+            : null } */}
             
 
             {this.prompts()}

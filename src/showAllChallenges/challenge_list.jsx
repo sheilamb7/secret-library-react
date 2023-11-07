@@ -50,7 +50,9 @@ export default class ChallengesList extends Component {
             {this.state.isLoading ? 
                <div className='content-loading'>
                   <div className='loader-image loading-image'></div>
-                  <div className='info'>Excuse us while the bookworms fetch the challenges: they're slow!</div></div>
+                  <div className='info'>Excuse the bookworms while they fetch the challenges: they're slow!</div>
+                  <div className='info'>If it takes too long go to the <a href="https://secret-library-api.onrender.com/" target="_blank" rel="noopener noreferrer">API warehouse</a></div>
+               </div>
             : 
             this.challenges()
             }

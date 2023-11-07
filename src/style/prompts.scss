@@ -1,17 +1,8 @@
 .prompt_list_container {
     margin: 1em 0 1em 1em;
-    ul {
-        list-style: url("https://i33.servimg.com/u/f33/20/31/42/73/sl_lis10.png");
 
-        li {
-            padding: .5em 0;
-
-            &:hover {
-                background-color: rgba($color2, 0.1);
-                color: $color5;
-                cursor: pointer;
-            }
-        }
+    .content-loading {
+        align-items: normal;
     }
     
     .prompt_container {
